@@ -43,7 +43,29 @@ tasks.withType(JavaCompile) {
     }
 }
 
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            groupId = group.toString()
+            artifactId = project.name
+            version = version
+        }
+    }
 
-jar {
-    destinationDirectory.set(file("C:/Users/rkdwo/OneDrive/바탕 화면/항붕이섭/plugins"))
+    repositories {
+        maven {
+            url = uri('http://localhost:8081/repository/maven-releases/')
+            allowInsecureProtocol = true
+            credentials {
+                username = "admin"
+                password = "a01076951577**"
+            }
+        }
+    }
 }
+
+
+//jar {
+//    destinationDirectory.set(file("C:/Users/rkdwo/OneDrive/바탕 화면/항붕이섭/plugins"))
+//}
