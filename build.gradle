@@ -19,6 +19,8 @@ repositories {
         name = 'papermc'
         url = 'https://repo.papermc.io/repository/maven-public/'
     }
+    maven { url = "https://jitpack.io" }
+    maven { url = "https://repo.codemc.org/repository/maven-public/" }
 }
 
 dependencies {
@@ -27,9 +29,9 @@ dependencies {
 
 ext {
     set("pluginName", project.name)
-    set("className", pluginName.split("-").join("").replace("afashs","").charAt(0).toUpperCase())
+    name = pluginName.split("-").join("").replace("afashs", "")
+    set("className", name.substring(0, 1).toUpperCase() + name.substring(1))
     set("packageName", project.name.replace("-","").replace("afashs",""))
-    pluginLibraries = new LinkedHashSet<String>()
 }
 
 tasks.withType(JavaCompile) {
