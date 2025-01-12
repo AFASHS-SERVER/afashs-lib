@@ -66,6 +66,6 @@ publishing {
 }
 
 
-//jar {
-//    destinationDirectory.set(file("C:/Users/rkdwo/OneDrive/바탕 화면/항붕이섭/plugins"))
-//}
+jar {
+    destinationDirectory.set(file("C:/Users/rkdwo/OneDrive/바탕 화면/항붕섭/plugins"))
+}
