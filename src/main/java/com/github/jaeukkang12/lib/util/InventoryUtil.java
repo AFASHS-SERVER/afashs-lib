@@ -14,6 +14,8 @@ public class InventoryUtil {
         for (ItemStack i : inventory.getContents()) {
             if (i != null && i.isSimilar(itemStack)) {
                 amount += i.getAmount();
+            } else if (i == null) {
+                amount += itemStack.getMaxStackSize();
             }
         }
         return amount > itemStack.getAmount();
