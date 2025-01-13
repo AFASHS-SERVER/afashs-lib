@@ -24,5 +24,15 @@ public class InventoryUtil {
     public static Integer getSpace(Inventory inventory) {
         return inventory.getSize() - Arrays.stream(inventory.getContents()).filter(Objects::nonNull).collect(Collectors.toList()).size();
     }
+
+    public static Integer getItem(Inventory inventory, ItemStack itemStack) {
+        int amount = 0;
+        for (ItemStack i : inventory.getContents()) {
+            if (i != null && i.isSimilar(itemStack)) {
+                amount += i.getAmount();
+            }
+        }
+        return amount;
+    }
     
 }

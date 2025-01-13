@@ -1,4 +1,4 @@
 name: '${pluginName}'
-version: '${version}'
+version: '${pluginVersion}'
 main: '${group}.${packageName}.${className}'
 api-version: '1.20.6'
