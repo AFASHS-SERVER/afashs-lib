@@ -4,11 +4,11 @@ import java.text.DecimalFormat;
 
 public class NumberUtil {
     public static boolean isNumber(double d) {
-        return d == (int) d;
+        return d % 1 == 0;
     }
 
     public static boolean isNumber(float f) {
-        return f == (int) f;
+        return f % 1 == 0;
     }
 
     public static String format(int i) {
