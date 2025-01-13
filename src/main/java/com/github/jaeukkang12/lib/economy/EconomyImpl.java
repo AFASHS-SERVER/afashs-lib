@@ -3,13 +3,13 @@ package com.github.jaeukkang12.lib.economy;
 import org.bukkit.entity.Player;
 
 public interface EconomyImpl {
-    int getMoney(Player target);
+    double getMoney(Player target);
 
-    void addMoney(Player target, int amount);
+    void addMoney(Player target, double amount);
 
-    void removeMoney(Player target, int amount);
+    void removeMoney(Player target, double amount);
 
-    void setMoney(Player target, int amount);
+    void setMoney(Player target, double amount);
 
-    void sendMoney(Player sender, Player sentTo, int amount);
+    void sendMoney(Player sender, Player sentTo, double amount);
 }

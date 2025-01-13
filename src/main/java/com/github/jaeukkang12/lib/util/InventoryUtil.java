@@ -24,4 +24,5 @@ public class InventoryUtil {
     public static Integer getSpace(Inventory inventory) {
         return inventory.getSize() - Arrays.stream(inventory.getContents()).filter(Objects::nonNull).collect(Collectors.toList()).size();
     }
+    
 }
