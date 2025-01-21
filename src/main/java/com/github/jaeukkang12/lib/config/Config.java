@@ -20,6 +20,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.util.*;
@@ -770,6 +771,16 @@ public class Config implements DefaultConfigImpl {
         }
 
         return messages;
+    }
+
+    public void delete(String path) {
+        try {
+            PreCondition.nonNull(path, "path는 null일 수 없습니다.");
+            config.set(path, null);
+            config.save(this.file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public boolean isExist(String path) {
